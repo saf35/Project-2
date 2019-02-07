@@ -1,0 +1,1 @@
+My idea changed quite a bit from my pseudo-code, because I want to focus more on the algorithmic design than the game aspect. I wanted to keep the interactivity, though. 
