@@ -1,4 +1,6 @@
 /*
+Due: Feb 21
+
 Spring color palette: mostly green, with splashes of the rainbow for flowers and blue for the 
 sky
 
