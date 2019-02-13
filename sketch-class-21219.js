@@ -29,7 +29,7 @@ function mouseDragged(){
     }
 }
 
-class Circe(){
+class Circe{
     // code will be uploaded to github
 
     constructor(tempX,tempY,tempW,tempH){

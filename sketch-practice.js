@@ -32,7 +32,7 @@ function draw(){
     }
 }
 
-class Letters(){
+class Letters{
     appear(){ // letters appear (aka, choose a new letter)
         // Pick random letter from letters array
         this.letter = lettersList[random(0,25)];
