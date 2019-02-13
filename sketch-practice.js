@@ -22,19 +22,28 @@ function setup(){
 
 function draw(){
     background(0);
-    // load function into variable
-    let l = new Letters();
-    currentLetters.push(l);
+
+    // load Letters function into array
+    for( let i = 0; i < 26; i++){
+        currentLetters[i] = new Letters();
+    }
 
     // display moving letters
     for(let i=0; i<currentLetters.length; i++){
-        currentLetters.display();
+        currentLetters.display(); // error here
         currentLetters.move();
         currentLetters.replace();
     }
 }
 
 class Letters{
+    pick(){
+        // Pick random letter from letters array
+        this.letter = lettersList[random(0,25)];
+        // store it in current letters array
+        currentLetters[i] = this.letter;
+    }
+    
     move(){ // letters move down the screen at slow pace
         xspeed = 0.1;
         yspeed = random();
@@ -53,10 +62,6 @@ class Letters{
     }
 
     display(){
-        // Pick random letter from letters array
-        this.letter = lettersList[random(0,25)];
-        // store it in current letters array
-        currentLetters[i] = this.letter;
         text(this.letter,this.x,this.y);
         fill(255);
     }
