@@ -25,22 +25,16 @@ function draw(){
     // load function into variable
     let l = new Letters();
     currentLetters.push(l);
+
     // display moving letters
     for(let i=0; i<currentLetters.length; i++){
         currentLetters.display();
         currentLetters.move();
+        currentLetters.replace();
     }
 }
 
 class Letters{
-    appear(){ // letters appear (aka, choose a new letter)
-        // Pick random letter from letters array
-        this.letter = lettersList[random(0,25)];
-        // store it in current letters array
-        currentLetters[i] = this.letter;
-        
-    }
-
     move(){ // letters move down the screen at slow pace
         xspeed = 0.1;
         yspeed = random();
@@ -51,8 +45,19 @@ class Letters{
         }
     }
 
+    // replace letter if it reaches bottom of the window
+    replace(){
+        if(this.x>windowHeight){
+            currentLetters.splice(0,1);
+        }
+    }
+
     display(){
+        // Pick random letter from letters array
+        this.letter = lettersList[random(0,25)];
+        // store it in current letters array
+        currentLetters[i] = this.letter;
         text(this.letter,this.x,this.y);
-        fill(0);
+        fill(255);
     }
 }
