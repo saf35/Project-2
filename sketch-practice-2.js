@@ -26,16 +26,16 @@ let bsea = 135;
 let gsea = 255;
 
 // booleans for different seasons
-let sprboo = true;
+let sprboo = true; // "spring boolean"...and so on
 let sumboo = false;
 let falboo = false;
 let winboo = false;
 
 // arrays that hold objects
-let flos = [];
-let suns = [];
-let lefs = [];
-let snos = [];
+let flos = []; // flowers
+let suns = []; // suns
+let lefs = []; // leafs
+let snos = []; // snowflakes
 
 function setup(){
     createCanvas(windowWidth,windowHeight);
@@ -45,13 +45,25 @@ function draw(){
     background(rsea,bsea,gsea);
 
     if(sprboo){ // spring
-
+        // splice
+        if(flos.length > 100){
+            flos.splice(0,1);
+        }
     } else if (sumboo){ // summer
-
+        // splice
+        if(suns.length > 100){
+            suns.splice(0,1);
+        }
     } else if (falboo){ // fall
-
+        // splice
+        if(lefs.length > 100){
+            lefs.splice(0,1);
+        }
     } else if (winboo){ // winter
-
+        // splice
+        if(snos.length > 100){
+            snos.splice(0,1);
+        }
     }
 }
 
@@ -119,6 +131,10 @@ class Sun{
         this.x = tempX;
         this.y = tempY;
     }
+
+    display(){
+
+    }
 }
 
 class Leaf{
@@ -126,11 +142,19 @@ class Leaf{
         this.x = tempX;
         this.y = tempY;
     }
+
+    display(){
+
+    }
 }
 
 class Snowflake{
     constructor(tempX,tempY){
         this.x = tempX;
         this.y = tempY;
+    }
+
+    display(){
+
     }
 }
