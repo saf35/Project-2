@@ -1,0 +1,3 @@
+/*
+Audience can affect colors of the objects and create different planet environments.
+*/
