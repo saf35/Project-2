@@ -15,7 +15,8 @@ Fall shape: leaf
 Winter shape: snowflake
 */
 
-// Current goal: make interactive shapes for each season
+// Current fixes: find out why isn't rotating
+//              : find out why not showing image multiple times
 
 // setting for initial season color
 let rsea = 250; 
