@@ -13,6 +13,8 @@ Winter color palette: Very light or very deep blue-purple, with browns and greys
 yellow-orange for the Sun
 */
 
+// Current goal: build spring graphic
+
 function setup(){
     createCanvas(windowWidth,windowHeight);
 }
