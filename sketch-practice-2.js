@@ -44,13 +44,15 @@ let lef3img;
 let snoimg;
 let sunimg;
 
+let werimg;
+
 function preload(){
     // loading interactive images
-    floimg = loadImage('images/flower.jpg');
-    lef1img = loadImage('images/leaf1.png');
-    lef2img = loadImage('images/leaf2.png');
-    lef3img = loadImage('images/leaf3.png');
-    snoimg = loadImage('images/snowflake.png');
+    floimg = loadImage('images/flower.png');
+    // lef1img = loadImage('images/leaf1.png');
+    // lef2img = loadImage('images/leaf2.png');
+    // lef3img = loadImage('images/leaf3.png');
+    // snoimg = loadImage('images/snowflake.png');
     sunimg = loadImage('images/sun.png');
 }
 
@@ -73,11 +75,17 @@ function draw(){
             flos.splice(0,1);
         }
     } else if (sumboo){ // summer
+        // display flowers
+        for(let i = 0; i<suns.length; i++){
+            suns[i].display(mouseX,mouseY);
+            suns[i].rotating();
+        }
+        
         // splice
         if(suns.length > 100){
             suns.splice(0,1);
         }
-    } else if (falboo){ // fall
+    } /*else if (falboo){ // fall
         // splice
         if(lefs.length > 100){
             lefs.splice(0,1);
@@ -87,7 +95,7 @@ function draw(){
         if(snos.length > 100){
             snos.splice(0,1);
         }
-    }
+    }*/
 }
 
 // putting down objects wherever 
@@ -96,18 +104,17 @@ function mousePressed(){
         let sp = new Flower(mouseX,mouseY);
         flos.push(sp);
         for(let j = 0; j<flos.length; j++){
-            flos[j].
+            flos[j].yesorno();
         }
     } else if (sumboo){ // summer
         
-        }
-    } else if (falboo){ // fall
-        
-        }
-    } else if (winboo){ // winter
-        
-        }
     }
+    /*} else if (falboo){ // fall
+        
+    //    }
+    //} else if (winboo){ // winter
+        
+    }*/
 }
 
 // what to change/show if press a certain key
@@ -134,7 +141,7 @@ function keyTyped(){
         let sumboo = true;
         let falboo = false;
         let winboo = false;
-    } else if (key === 'd'){ // fall
+    /*} else if (key === 'd'){ // fall
         // bg colors
         rsea = 64;
         bsea = 52;
@@ -156,7 +163,7 @@ function keyTyped(){
         let sumboo = false;
         let falboo = false;
         let winboo = true;
-    }
+    }*/
 }
 
 class Flower{
@@ -196,7 +203,7 @@ class Sun{
     }
 }
 
-class Leaf1{
+/*class Leaf1{
     constructor(tempX,tempY){
         this.x = tempX;
         this.y = tempY;
@@ -246,4 +253,4 @@ class Snowflake{
     display(){
 
     }
-}
+}*/
