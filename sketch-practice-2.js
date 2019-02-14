@@ -31,6 +31,12 @@ let sumboo = false;
 let falboo = false;
 let winboo = false;
 
+// arrays that hold objects
+let flos = [];
+let suns = [];
+let lefs = [];
+let snos = [];
+
 function setup(){
     createCanvas(windowWidth,windowHeight);
 }
@@ -101,6 +107,10 @@ class Flower{
     constructor(tempX,tempY){
         this.x = tempX;
         this.y = tempY;
+    }
+
+    display(){
+
     }
 }
 
