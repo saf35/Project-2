@@ -18,7 +18,7 @@ Help from https://stackoverflow.com/questions/12066870/how-to-check-if-an-elemen
 on seeing if elements are overlapping.
 */
 
-// Current goal: build spring graphic
+// Current goal: make interactive shapes for each season
 
 // setting for initial season color
 let rsea = 250; 
@@ -67,6 +67,7 @@ function draw(){
     }
 }
 
+// what to change/show if press a certain key
 function keyTyped(){
     if(key === 'a'){ // spring
         // bg colors
@@ -121,6 +122,18 @@ class Flower{
         this.y = tempY;
     }
 
+    floShp(){ // create flower shape
+        // from https://p5js.org/examples/hello-p5-simple-shapes.html
+        translate(580, 200);
+        noStroke();
+        for (let i = 0; i < 10; i ++) {
+            ellipse(0, 30, 20, 80);
+            rotate(PI/5);
+        }
+
+
+    }
+
     display(){
 
     }
@@ -131,6 +144,8 @@ class Sun{
         this.x = tempX;
         this.y = tempY;
     }
+
+    // create sun shape
 
     display(){
 
@@ -143,6 +158,8 @@ class Leaf{
         this.y = tempY;
     }
 
+    // create leaf shape
+
     display(){
 
     }
@@ -153,6 +170,8 @@ class Snowflake{
         this.x = tempX;
         this.y = tempY;
     }
+
+    // create snowflake shape
 
     display(){
 
