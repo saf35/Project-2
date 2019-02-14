@@ -13,9 +13,6 @@ Spring shape: flower
 Summer shape: sun
 Fall shape: leaf
 Winter shape: snowflake
-
-Help from https://stackoverflow.com/questions/12066870/how-to-check-if-an-element-is-overlapping-other-elements
-on seeing if elements are overlapping.
 */
 
 // Current goal: make interactive shapes for each season
@@ -34,8 +31,28 @@ let winboo = false;
 // arrays that hold objects
 let flos = []; // flowers
 let suns = []; // suns
-let lefs = []; // leafs
+let lefs1 = []; // leafs
+let lefs2 = [];
+let lefs3 = [];
 let snos = []; // snowflakes
+
+// variables for images
+let floimg;
+let lef1img;
+let lef2img;
+let lef3img;
+let snoimg;
+let sunimg;
+
+function preload(){
+    // loading interactive images
+    floimg = loadImage('images/flower.jpg');
+    lef1img = loadImage('images/leaf1.png');
+    lef2img = loadImage('images/leaf2.png');
+    lef3img = loadImage('images/leaf3.png');
+    snoimg = loadImage('images/snowflake.png');
+    sunimg = loadImage('images/sun.png');
+}
 
 function setup(){
     createCanvas(windowWidth,windowHeight);
@@ -45,6 +62,12 @@ function draw(){
     background(rsea,bsea,gsea);
 
     if(sprboo){ // spring
+        // display flowers
+        for(let i = 0; i<flos.length; i++){
+            flos[i].display(mouseX,mouseY);
+            flos[i].rotating();
+        }
+
         // splice
         if(flos.length > 100){
             flos.splice(0,1);
@@ -63,6 +86,26 @@ function draw(){
         // splice
         if(snos.length > 100){
             snos.splice(0,1);
+        }
+    }
+}
+
+// putting down objects wherever 
+function mousePressed(){
+    if(sprboo){ // spring
+        let sp = new Flower(mouseX,mouseY);
+        flos.push(sp);
+        for(let j = 0; j<flos.length; j++){
+            flos[j].
+        }
+    } else if (sumboo){ // summer
+        
+        }
+    } else if (falboo){ // fall
+        
+        }
+    } else if (winboo){ // winter
+        
         }
     }
 }
@@ -120,22 +163,23 @@ class Flower{
     constructor(tempX,tempY){
         this.x = tempX;
         this.y = tempY;
+        this.isPre = false;
     }
 
-    floShp(){ // create flower shape
-        // from https://p5js.org/examples/hello-p5-simple-shapes.html
-        translate(580, 200);
-        noStroke();
-        for (let i = 0; i < 10; i ++) {
-            ellipse(0, 30, 20, 80);
-            rotate(PI/5);
+    display(mx,my){
+        let werimg = image(floimg,this.x,this.y);
+    }
+
+    rotating(){
+        werimg.rotate(PI/32);
+    }
+
+    yesorno(){
+        if(mouseIsPressed){
+            this.isPre = true;
+        } else {
+            this.isPre = false;
         }
-
-
-    }
-
-    display(){
-
     }
 }
 
@@ -148,11 +192,11 @@ class Sun{
     // create sun shape
 
     display(){
-
+        image(sunimg);
     }
 }
 
-class Leaf{
+class Leaf1{
     constructor(tempX,tempY){
         this.x = tempX;
         this.y = tempY;
@@ -161,7 +205,33 @@ class Leaf{
     // create leaf shape
 
     display(){
+        image(lef1img);
+    }
+}
 
+class Leaf2{
+    constructor(tempX,tempY){
+        this.x = tempX;
+        this.y = tempY;
+    }
+
+    // create leaf shape
+
+    display(){
+        image(lef2img);
+    }
+}
+
+class Leaf3{
+    constructor(tempX,tempY){
+        this.x = tempX;
+        this.y = tempY;
+    }
+
+    // create leaf shape
+
+    display(){
+        image(lef3img);
     }
 }
 
